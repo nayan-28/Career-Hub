@@ -1,7 +1,9 @@
 import { SlLocationPin } from "react-icons/sl";
 import { MdCurrencyExchange } from "react-icons/md";
+import { Link } from "react-router-dom";
 const Job = ({ job }) => {
   const {
+    id,
     logo,
     job_title,
     company_name,
@@ -9,7 +11,6 @@ const Job = ({ job }) => {
     location,
     job_type,
     salary,
-    job_description,
   } = job;
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
@@ -38,7 +39,9 @@ const Job = ({ job }) => {
           </h2>
         </div>
         <div className="card-actions">
-          <button className="btn btn-primary">View Details</button>
+          <Link to={`/jobs/${id}`}>
+            <button className="btn btn-primary">View Details</button>
+          </Link>
         </div>
       </div>
     </div>
