@@ -5,6 +5,8 @@ import {
   MdOutlineMail,
   MdLocationPin,
 } from "react-icons/md";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { SlCalender } from "react-icons/sl";
 const JobDetails = () => {
@@ -21,7 +23,10 @@ const JobDetails = () => {
     job_title,
     location,
   } = job;
-  console.log(job);
+  const handleJobApply = () => {
+    toast("You have applied successfully");
+  };
+
   return (
     <div>
       <h2>Job details of:{job_title}</h2>
@@ -71,11 +76,15 @@ const JobDetails = () => {
             <span className="font-bold">Location:</span>
             {location}
           </p>
-          <button className="btn bg-indigo-500 hover:bg-violet-400 text-white w-full mt-6">
+          <button
+            onClick={handleJobApply}
+            className="btn bg-indigo-500 hover:bg-violet-400 text-white w-full mt-6"
+          >
             Apply
           </button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
