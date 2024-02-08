@@ -47,15 +47,20 @@ const Header = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Career Hub</a>
+        <NavLink to="/" className="btn btn-ghost text-xl">
+          Career Hub
+        </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-indigo-500 hover:bg-violet-400 text-white">
+        <NavLink
+          to="/"
+          className="btn bg-indigo-500 hover:bg-violet-400 text-white"
+        >
           Apply Now
-        </a>
+        </NavLink>
       </div>
     </div>
   );

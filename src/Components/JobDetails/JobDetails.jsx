@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { SlCalender } from "react-icons/sl";
+import { saveJobApplication } from "../Utility/LocalStorage";
 const JobDetails = () => {
   const jobs = useLoaderData();
   const { id } = useParams();
@@ -24,6 +25,7 @@ const JobDetails = () => {
     location,
   } = job;
   const handleJobApply = () => {
+    saveJobApplication(idInt);
     toast("You have applied successfully");
   };
 
