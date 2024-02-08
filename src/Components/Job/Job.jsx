@@ -1,10 +1,46 @@
-import React from "react";
-
+import { SlLocationPin } from "react-icons/sl";
+import { MdCurrencyExchange } from "react-icons/md";
 const Job = ({ job }) => {
-  const { logo } = job;
+  const {
+    logo,
+    job_title,
+    company_name,
+    remote_or_onsite,
+    location,
+    job_type,
+    salary,
+    job_description,
+  } = job;
   return (
-    <div>
-      <img src={logo} />
+    <div className="card card-compact bg-base-100 shadow-xl">
+      <figure>
+        <img src={logo} alt="Image" />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">{job_title}</h2>
+        <p>{company_name}</p>
+        <div>
+          <button className="px-5 py-2 font-extrabold border rounded border-[#7E90FE] mr-4 text-[#7E90FE]">
+            {remote_or_onsite}
+          </button>
+          <button className="px-5 py-2 font-extrabold border rounded border-[#7E90FE] mr-4  text-[#7E90FE]">
+            {job_type}
+          </button>
+        </div>
+        <div className="mt-4 flex">
+          <h2 className="flex mr-4">
+            <SlLocationPin className="text-2xl"></SlLocationPin>
+            {location}
+          </h2>
+          <h2 className="flex">
+            <MdCurrencyExchange className="text-2xl"></MdCurrencyExchange>
+            {salary}
+          </h2>
+        </div>
+        <div className="card-actions">
+          <button className="btn btn-primary">View Details</button>
+        </div>
+      </div>
     </div>
   );
 };
